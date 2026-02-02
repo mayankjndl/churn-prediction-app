@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("model.pkl")
-scaler = joblib.load("scaler.pkl")
-imputer = joblib.load("imputer.pkl")
+model = joblib.load("model_2.pkl")
+scaler = joblib.load("scaler_2.pkl")
+imputer = joblib.load("imputer_2.pkl")
 
 st.title("Customer Churn Prediction")
 
@@ -48,3 +48,4 @@ if st.button("Predict"):
         st.error(f"High Churn Risk ({prob*100:.2f}%)")
     else:
         st.success(f"Low Churn Risk ({prob*100:.2f}%)")
+
