@@ -48,6 +48,36 @@ Focus was placed on **recall**, as missing churn customers is costlier than fals
 
 ---
 
+## 📓 Training Pipeline
+
+The complete model training and evaluation process is available in:
+
+`ml_pipeline_churn.ipynb`
+
+This notebook includes:
+- Data cleaning
+- Feature encoding
+- Train/test split
+- Model comparison
+- Final model selection
+- Exporting trained artifacts using `joblib`
+
+---
+
+## 📊 Dataset
+
+The model was trained on the **Telco Customer Churn dataset**, located in:
+
+`data/Telco_customer_churn.xlsx`
+
+The dataset contains customer-level information such as:
+- Demographics
+- Service usage
+- Billing details
+- Contract types
+
+---
+
 ## 🛠 Tech Stack
 
 - Python 3.12  
@@ -64,9 +94,15 @@ Focus was placed on **recall**, as missing churn customers is costlier than fals
 churn-prediction-app/
 │
 ├── app.py # Streamlit web app
-├── model.pkl # Trained Decision Tree model
-├── scaler.pkl # StandardScaler
-├── imputer.pkl # SimpleImputer
+├── churn_model.ipynb # Model training notebook
+│
+├── data/
+│ └── Telco_customer_churn.xlsx
+│
+├── model_v2.pkl # Trained Decision Tree model
+├── scaler_v2.pkl # StandardScaler
+├── imputer_v2.pkl # SimpleImputer
+│
 ├── requirements.txt # Dependency versions
 └── README.md
 ```
@@ -83,21 +119,22 @@ Key challenges solved during deployment:
 - Cloud runtime differences
 
 Final solution uses:
-Python 3.12
-scikit-learn 1.6.1
-numpy 2.0.2
+- Python 3.12
+- scikit-learn 1.6.1
+- numpy 2.0.2
 
 ---
 
 ## ▶️ Run Locally
-```
+```bash
 git clone https://github.com/mayankjndl/churn-prediction-app
 cd churn-prediction-app
 
 pip install -r requirements.txt
 streamlit run app.py
-Then open: http://localhost:8501
 ```
+Then open: http://localhost:8501
+
 ## 📈 Example Output
 
 The app returns:
@@ -109,14 +146,20 @@ The app returns:
 - Example:
   - Low Churn Risk (16.49%)
 
+---
+
 ## 🔐 Model Persistence Note
 
 Models are stored using joblib.
 Pickle files must always be loaded using the same library versions they were trained with.
 
+---
+
 ## 👤 Author
 
-Mayank Jindal
+**Mayank Jindal**
+
+---
 
 This project demonstrates:
 
