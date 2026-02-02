@@ -94,7 +94,7 @@ The dataset contains customer-level information such as:
 churn-prediction-app/
 │
 ├── app.py # Streamlit web app
-├── churn_model.ipynb # Model training notebook
+├── ml_pipeline_churn.ipynb # Model training notebook
 │
 ├── data/
 │ └── Telco_customer_churn.xlsx
